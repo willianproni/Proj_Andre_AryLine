@@ -8,29 +8,29 @@ using System.Threading.Tasks;
 namespace Model
 {
     public class Endereco
-    {
-        [JsonProperty("id_end")]
+    {   
+        [JsonProperty("id")]
         public int ID { get; set; }
-        [JsonProperty("Pais")]
+        [JsonProperty("pais")]
         public string Pais { get; set; }
 
-        [JsonProperty("CEP")]
+        [JsonProperty("cep")]
         public string Cep { get; set; }
 
-        [JsonProperty("Cidade")]
+        [JsonProperty("cidade")]
         public string Cidade { get; set; }
 
-        [JsonProperty("Estado")]
+        [JsonProperty("estado")]
         public string Estado { get; set; }
 
-        [JsonProperty("Logradouro")]
+        [JsonProperty("logradouro")]
         public string Logradouro { get; set; }
 
-        [JsonProperty("Bairro")]
+        [JsonProperty("bairro")]
         public string Bairro { get; set; }
-        [JsonProperty("Complemento")]
+        [JsonProperty("complemento")]
         public string Complemento { get; set; }
-        [JsonProperty("Numero")]
+        [JsonProperty("numero")]
         public string Numero { get; set; }
 
         public Endereco()
@@ -52,8 +52,7 @@ namespace Model
 
         public string ExibiEndereco()
         {
-            return $"\n\nId: {ID}\n" +
-                   $"País: {Pais}\n" +
+            return $"País: {Pais}\n" +
                    $"CEP: {Cep}\n" +
                    $"Cidade: {Cidade}\n" +
                    $"Estado: {Estado}\n" +

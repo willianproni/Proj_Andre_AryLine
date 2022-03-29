@@ -9,7 +9,7 @@ namespace Model
 {
     public class Aeronave
     {
-        [JsonProperty("id")]
+        [JsonProperty("id_aeronave")]
         public int ID { get; set; }
         [JsonProperty("nome")]
         public string Nome { get; set; }

@@ -21,7 +21,7 @@ namespace Porj_Andre_Arlines
 
             #region Endereço
             
-            string fileEndereco = @"C:\5by5\andre_airline\endereco.json";
+            string fileEndereco = @"C:\5by5\andre_airline\andre_aryline.json";
 
             var listaEndereco = ReadFile.RecebeEndereco(fileEndereco);
 
@@ -40,7 +40,7 @@ namespace Porj_Andre_Arlines
             #endregion
 
             #region Passageiro
-            string filePassageiro = @"C:\5by5\andre_airline\passageiro.json";
+            string filePassageiro = @"C:\5by5\andre_airline\andre_aryline.json";
 
             var listaPassageiro = ReadFile.RecebePassageiro(filePassageiro);
 
@@ -61,7 +61,7 @@ namespace Porj_Andre_Arlines
             #endregion
 
             #region Aeronave
-            string fileAeronave = @"C:\5by5\andre_airline\aeronaves.json";
+            string fileAeronave = @"C:\5by5\andre_airline\andre_aryline.json";
 
             var listaAeronave = ReadFile.RecebeAeronave(fileAeronave);
 
@@ -72,14 +72,14 @@ namespace Porj_Andre_Arlines
 
                 foreach (var aeronave in consultaAeronave)
                 {
-                    //Console.WriteLine(aeronave.ExibirAeronaves());
+                    //Console.WriteLine(aeronave.ToString());
                     //banco.InserirAeronave(aeronave);
                 }
             }
             #endregion
 
             #region Aeroporto
-            string fileAeroporto = @"C:\5by5\andre_airline\aeroporto.json";
+            string fileAeroporto = @"C:\5by5\andre_airline\andre_aryline.json";
 
             var listaAeroporto = ReadFile.RecebeAeroporto(fileAeroporto);
 
@@ -90,13 +90,32 @@ namespace Porj_Andre_Arlines
 
                 foreach (var aeroporto in consultaAeroporto)
                 {
-                    Console.WriteLine(aeroporto.ExibirAeroporto());
-                    banco.InserirAeroporto(aeroporto);
+                    //Console.WriteLine(aeroporto.ToString());
+                    //banco.InserirAeroportoOrigem(aeroporto);
+                    //banco.InserirAeroportoDestino(aeroporto);
                 }
             }
 
             #endregion
+
+            string fileVoo = @"C:\5by5\andre_airline\andre_aryline.json";
+
+            var listaVoo = ReadFile.RecebeVoo(fileVoo);
+
+            if (listaVoo != null)
+            {
+                var consultaVoo = (from dados in listaVoo
+                                   select dados);
+
+                foreach (var voo in consultaVoo)
+                {
+                    //Console.WriteLine(voo.ToString());
+                    //banco.InserirVoo(voo);
+                }
+            }
         }
+
+
     }
 }
 

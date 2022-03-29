@@ -14,9 +14,9 @@ namespace Model
         [JsonProperty("nome")]
         public string Nome { get; set; }
         [JsonProperty("endereco")]
-        public int Endereco { get; set; }
+        public Endereco Endereco { get; set; }
 
-        public Aeroporto(string sigla, string nome, int endereco)
+        public Aeroporto(string sigla, string nome, Endereco endereco)
         {
             Sigla = sigla;
             Nome = nome;
@@ -25,9 +25,9 @@ namespace Model
 
         public string ExibirAeroporto()
         {
-            return $"\n\nSigla: {Sigla}\n" +
+            return $"\nSigla: {Sigla}\n" +
                    $"Nome: {Nome}\n" +
-                   $"Endereço: {Endereco}";
+                   $"{Endereco.ExibiEndereco()}";
         }
     }
 }

@@ -21,17 +21,17 @@ namespace Model
         public string? Telefone { get; set; }
 
         [JsonProperty("DataNascimento")]
-        public DateTime? DataNasc { get; set; }
+        public string? DataNasc { get; set; }
 
         [JsonProperty("email")]
         public string? Email { get; set; }
 
         [JsonProperty("endereco")]
-        public  int? Endereco { get; set; }
+        public  Endereco Endereco { get; set; }
 
         #endregion
 
-        public Passageiro(string cpf, string nome, string telefone, DateTime dataNasc, string email, int endereco)
+        public Passageiro(string cpf, string nome, string telefone, string dataNasc, string email, Endereco endereco)
         {
             CPF = cpf;
             Nome = nome;
@@ -51,7 +51,7 @@ namespace Model
                    $"Telefone: {Telefone}\n" +
                    $"Data Nascimento: {DataNasc}\n" +
                    $"Email: {Email}\n" +
-                   $"Endereço: {Endereco}";
+                   $"Endereço: {Endereco.ExibiEndereco()}";
         }
 
 

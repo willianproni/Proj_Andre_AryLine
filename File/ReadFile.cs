@@ -12,11 +12,11 @@ namespace File
 {
     public class ReadFile
     {
-        public static List<Passageiro>? RecebePassageiro(string FilePassageiro)
+        public static List<Voo>? RecebePassageiro(string FilePassageiro)
         {
             StreamReader leitura = new StreamReader(FilePassageiro);
             string jsonPassageiro = leitura.ReadToEnd();
-            var lista = JsonConvert.DeserializeObject<List<Passageiro>>(jsonPassageiro) as List<Passageiro>;
+            var lista = JsonConvert.DeserializeObject<List<Voo>>(jsonPassageiro) as List<Voo>;
             if (lista != null)
                 return lista;
             return null;
@@ -31,21 +31,31 @@ namespace File
             return null;
         }
 
-        public static List<Aeronave>? RecebeAeronave(string FileAeronave)
+        public static List<Voo>? RecebeAeronave(string FileAeronave)
         {
             StreamReader leitura = new StreamReader(FileAeronave);
             string jsonAeronave = leitura.ReadToEnd();
-            var lista = JsonConvert.DeserializeObject<List<Aeronave>>(jsonAeronave);
+            var lista = JsonConvert.DeserializeObject<List<Voo>>(jsonAeronave);
             if (lista != null)
                 return lista;
             return null;
         }
 
-        public static List<Aeroporto>? RecebeAeroporto(string FileAeroporto)
+        public static List<Voo>? RecebeAeroporto(string FileAeroporto)
         {
             StreamReader leitura = new StreamReader(FileAeroporto);
             string JsonAeroporto = leitura.ReadToEnd();
-            var lista = JsonConvert.DeserializeObject<List<Aeroporto>>(JsonAeroporto);
+            var lista = JsonConvert.DeserializeObject<List<Voo>>(JsonAeroporto);
+            if (lista != null)
+                return lista;
+            return null;
+        }
+
+        public static List<Voo>? RecebeVoo(string FileVoo)
+        {
+            StreamReader leitura = new StreamReader(FileVoo); ;
+            string JsonVoo = leitura.ReadToEnd();
+            var lista = JsonConvert.DeserializeObject<List<Voo>>(JsonVoo);
             if (lista != null)
                 return lista;
             return null;
