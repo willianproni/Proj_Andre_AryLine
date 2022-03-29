@@ -155,5 +155,41 @@ namespace Data
             sql_cmnd.ExecuteNonQuery();
             connection.Close();
         }
+
+        public void TodosOsVoosBrasil()
+        {
+            connection.Close();
+            connection.Open();
+            string sql = "select v.id, a.sigla, e.pais" +
+                         "from tb_voo" +
+                         "join tb_aeroporto a on v.destino = a.sigla" +
+                         "join tb_endereco e on a.endereco = e.id" +
+                         "where e.pais = brazil";
+
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Console.WriteLine("\t\tID: {0}\n" +
+                                          "\t\tDestino: {1}\n" +
+                                          "\t\tOrigem: {2}\n", reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
+                    }
+                }
+            }
+            connection.Close();
+        }
+
+        public void VoosBrasil()
+        {
+            connection.Close();
+            connection.Open();
+            SqlCommand sql_cmnd = new SqlCommand("voo_realizado_brasil", connection);
+            sql_cmnd.CommandType = CommandType.StoredProcedure;
+            sql_cmnd.ExecuteNonQuery();
+            connection.Close();
+
+        }
     }
 }

@@ -14,10 +14,33 @@ namespace Porj_Andre_Arlines
 {
     internal class Program
     {
-
         static void Main(string[] args)
         {
             ReadBd banco = new ReadBd();
+            string opc;
+
+            do
+            {
+                Menu();
+                opc = Console.ReadLine();
+                switch (opc)
+                {
+                    case "1":
+                        banco.TodosOsVoosBrasil();
+                        break;
+                    case "2":
+                        
+                        break;
+                    case "0":
+                        break;
+                    default:
+                        Console.WriteLine("Digite uma Opçaõ válida");
+                        break;
+                }
+            } while (opc != "0");
+
+
+            
 
             #region Endereço
             
@@ -115,7 +138,15 @@ namespace Porj_Andre_Arlines
             }
         }
 
-
+        public static void Menu()
+        {
+            Console.WriteLine("----------------------------------------\n" +
+                              "[1] - Todos os destinos e origens de Hoje\n" +
+                              "[2] - Todos os Voos realizados no Brasil\n" +
+                              "[0] - Sair" +
+                              "\n------------------------------------------");
+            Console.Write("Opção: ");
+        }
     }
 }
 
